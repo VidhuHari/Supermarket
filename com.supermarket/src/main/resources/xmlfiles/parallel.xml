@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallelexecution" thread-count="3" parallel="tests">
+<listeners>
+<listener class-name="com.supermarket.listeners.ExtentReporter"></listener>
+</listeners>
+	<test name="smokeRun">
+		<classes>
+			<class name="com.supermarket.testes.LoginTest"></class>
+			<class name="com.supermarket.testes.ManageCodTest"></class>
+		</classes>
+	</test>
+	<test name="reggression">
+		<classes>
+			<class name="com.supermarket.testes.ManageProductTest"></class>
+			<class name="com.supermarket.testes.PushNotificationsTest"></class>
+		</classes>
+	</test>
+</suite>
