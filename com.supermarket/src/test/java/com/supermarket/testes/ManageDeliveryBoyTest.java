@@ -30,9 +30,9 @@ public class ManageDeliveryBoyTest  extends Base{
 		managedeliveryboy=new ManageDeliveryBoyPage(driver);
 		loginpage.login();
 		managedeliveryboy.clickOnManageUser();
-		String actual=managedeliveryboy.editDelieveryBoyInformation("ammu986");
+		String actual=managedeliveryboy.editDelieveryBoyInformation("Aryananda");
 		System.out.println(actual);
-		managedeliveryboy.updatePhoneField("9978564356");
+		managedeliveryboy.updatePhoneField("9876543229");
 		managedeliveryboy.clickOnupdateButton();
 		
 		

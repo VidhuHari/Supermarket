@@ -22,7 +22,7 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//h5")
 	private WebElement alert;
 	
-	@FindBy(xpath = "//input[@name='phone']")
+	@FindBy(xpath = "//input[@id='phone']")
 	private WebElement phonenumber;
 	
 	@FindBy(xpath = "//input[@id='name']")
@@ -30,6 +30,8 @@ public class ManageDeliveryBoyPage {
 	
 	@FindBy(xpath = "//textarea[@id='address']")
 	private WebElement address;
+	
+	
 	
 	@FindBy(xpath = "//input[@id='name']")
 	private WebElement userName;;
@@ -61,10 +63,7 @@ public class ManageDeliveryBoyPage {
 		return generalutility.getTextOfElements(alert);
 
 	}
-	public void updatePhoneField(String phonenum) {
-		phonenumber.clear();
-		phonenumber.sendKeys(phonenum);
-	}
+	
 
 	public String editDelieveryBoyInformation(String userName) {
 
@@ -81,8 +80,13 @@ public class ManageDeliveryBoyPage {
 		}
 		WebElement editbutton = driver.findElement(By.xpath("//tbody//tr[" + j + "]//td[8]//a"));
 		pageutility.scrollAndclick(editbutton);
+		
 		clickOnupdateButton();
 		return generalutility.getTextOfElements(updatealert);
+		
+	}public void updatePhoneField(String phonenum) {
+		phonenumber.clear();
+		phonenumber.sendKeys(phonenum);
 		
 	}
 	public void clickOnupdateButton() {

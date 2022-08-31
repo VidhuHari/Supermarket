@@ -19,6 +19,17 @@ public class ManageOfferCodePage {
 	@FindBy(xpath ="//a[@href='https://groceryapp.uniqassosiates.com/admin/Offercode/add']")
 	WebElement newButton;
 
+	@FindBy(xpath ="//input[@id='offer_code']")
+	WebElement enteroffercode;
+	
+	
+	@FindBy(xpath ="//input[@id='offer_code']")
+	WebElement yesbutton;
+	
+	@FindBy(xpath ="//input[@id='offer_code']")
+	WebElement nobutton;
+	
+	
 	@FindBy(id ="main_img")
 	WebElement uploadImage;
 	
@@ -54,9 +65,9 @@ public class ManageOfferCodePage {
 		 pageutility=new PageUtility(driver);
 		clickManageOfferCode();
 		clickNewButton();
-		//String destination=System.getProperty("user.dir")+"//ProductImages//"+"dairymilk"+".jpg";
-		pageutility.fileUpload(uploadImage,System.getProperty("user.dir")+"//ProductImages//" + "dairymilk" + ".jpg");
 		pageutility.scroll_into_View(uploadImage);
+		pageutility.fileUpload(uploadImage,System.getProperty("user.dir")+"//ProductImages//" + "dairymilk" + ".jpg");
+		clickchoosefile();
 	}
 public ManageOfferCodePage(WebDriver driver)
 {

@@ -18,9 +18,10 @@ public class ManageOfferCodeTest extends Base {
 		manageoffercode=new ManageOfferCodePage(driver);
 		manageoffercode.clickManageOfferCode();
 		manageoffercode.clickNewButton();
-		manageoffercode.clickchoosefile();
+		manageoffercode.imageUpload();
+		//manageoffercode.clickchoosefile();
 		manageoffercode.clicksaveButton();
-		manageoffercode.scrollDown();
+		//manageoffercode.scrollDown();
 		
 }
 }
