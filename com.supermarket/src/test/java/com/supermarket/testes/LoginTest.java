@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import com.supermarket.base.Base;
 import com.supermarket.pages.LoginPage;
 import com.supermarket.utilities.DataProviders;
+import com.supermarket.utilities.ResponseCode;
 
 public class LoginTest extends Base {
 	LoginPage loginpage;
@@ -41,5 +42,13 @@ public class LoginTest extends Base {
 		Assert.assertTrue(true);
 
 	}
-
-}
+	@Test(priority=1)
+	public void verifprofileImageLink() {
+		loginpage = new LoginPage(driver);
+		loginpage.login();
+	int actual=loginpage.getprofileImageResponseCode();
+	int expt=200;
+	Assert.assertEquals(actual,expt);
+	
+	}
+	}
