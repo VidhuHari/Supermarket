@@ -18,7 +18,7 @@ public class LoginTest extends Base {
 		loginpage.login();
 	}
 
-	@Test(groups="smoke")
+	@Test(groups = "smoke")
 	public void VerifyInvalidCredentialErrorMessage() {
 		loginpage = new LoginPage(driver);
 		String actualalertMessage = loginpage.getinvalidLoginErrorMessage();
@@ -35,20 +35,22 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(priority=1)
+	@Test(priority = 2)
 	public void verifyRemebermeButton() {
 		loginpage = new LoginPage(driver);
 		loginpage.checkRememberMeButton();
 		Assert.assertTrue(true);
 
 	}
-	@Test(priority=1)
-	public void verifprofileImageLink() {
+
+	@Test(priority = 1)
+	public void verifyLogoutButton() {
 		loginpage = new LoginPage(driver);
 		loginpage.login();
-	int actual=loginpage.getprofileImageResponseCode();
-	int expt=200;
-	Assert.assertEquals(actual,expt);
-	
+		String actual = loginpage.clickOnLogoutButton();
+		System.out.println(actual);
+		String expt = "Sign in to start your session";
+		Assert.assertEquals(actual, expt);
+
 	}
-	}
+}
